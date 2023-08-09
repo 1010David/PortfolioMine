@@ -1,0 +1,256 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 15px; /* Tamaño de fuente base */
+  color: #56c781;
+  background-color: #f0f0f0;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Estilos para la página */
+.page-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Estilos para la barra de navegación */
+nav.sidebar {
+  background-color: #54eb61;
+  width: 120px;
+  border-bottom-right-radius: 150px;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Cambia la dirección del eje principal */
+  justify-content: flex-start; /* Alinea los elementos en la parte superior */
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega sombreado */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+nav li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Alinea los iconos y enlaces en vertical */
+  align-items: center;
+}
+
+/* Iconos de Font Awesome */
+nav i {
+  font-size: 24px;
+  margin-bottom: 5px; /* Espacio entre el icono y el enlace */
+}
+
+/* Estilos para el contenedor de fondo de la foto de perfil con efecto de desvanecimiento */
+.profile-background {
+  position: absolute;
+  top: 0;
+  left: 0; /* Cambia el valor de left a 0 para que el fondo empiece desde el lateral izquierdo */
+  width: 100%; /* Ajusta el ancho para que el fondo ocupe todo el ancho del contenedor */
+  height: 200px; /* Ajusta la altura según las dimensiones de la imagen de fondo */
+  border-radius: 2%;
+  overflow: hidden;
+  z-index: -1;
+  background-image: url('img/fondo.jpg'); /* Ajusta la ruta de la imagen */
+  background-size: cover; /* Utiliza cover para que la imagen se ajuste y cubra todo el contenedor */
+  background-position: top; /* Posiciona la imagen en la parte superior del contenedor */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para el efecto de desvanecimiento */
+  opacity: 0.9; /* Opacidad para el efecto de desvanecimiento */
+}
+
+.tools {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(15, 35, 216, 0.05);
+  text-align: center;
+  color: #1c4752;
+  margin-top: 20px;
+}
+
+/* Estilos para los iconos de herramientas */
+.tools-icons i {
+  font-size: 30px;
+  margin: 10px;
+  transition: color 0.3s ease-in-out;
+  color: #1c4752; /* Color predeterminado */
+}
+
+/* Resaltar el icono de Java */
+.tools-icons i.fa-java {
+  color: #ff9f43; /* Cambia el color del icono de Java */
+  font-size: 55px; /* Ajusta el tamaño del icono de Java */
+}
+
+.tools-icons i:hover {
+  color: #56c781; /* Cambia el color al pasar el cursor sobre los iconos */
+}
+
+
+
+
+/* Estilos para el pie de página */
+footer.footer {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #4aec55;
+  color: #056102;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top-left-radius: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega sombreado */
+}
+
+.vacio {
+  height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+/* Estilos para los iconos de contacto en el pie de página */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px; /* Espacio entre los iconos */
+}
+
+.contact-icons a {
+  color: #056102;
+  font-size: 30px;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-icons a:hover {
+  color: #056102;
+}
+
+/* Estilos para las secciones */
+.main-content {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 3; /* Abarca tres filas, desde la primera hasta la última */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Alinea desde la parte superior */
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative; /* Agrega posicionamiento relativo para que el contenedor de fondo se ajuste */
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 30%;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(62, 45, 218, 0.1);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para que quepa dentro del contenedor sin recortarla */
+}
+
+/* Estilos para las secciones (contenido principal) */
+.nombre,
+.description,
+.datos,
+.education {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 4px rgba(15, 35, 216, 0.05);
+  text-align: center;
+  color: #1c4752;
+}
+
+/* Cambiar el color de los títulos en las secciones */
+.nombre h2,
+.description h3,
+.datos h3,
+.education h3 {
+  color: #1c4752; /* Cambia el color de los títulos aquí */
+}
+
+/* Estilos adicionales para mejorar legibilidad */
+h1, h2, h3 {
+  color: #1c4752;
+}
+
+.bio p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* Estilos para el cuadro emergente (atributo title) */
+.tools-icons i[title]::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #1c4752;
+  color: #45e04d;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+.tools-icons i {
+  font-size: 36px; /* Cambia el tamaño de fuente según tus preferencias */
+  margin: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+
+/* Estilos al pasar el cursor sobre el icono */
+.tools-icons i[title]:hover::after {
+  opacity: 2;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Ocultar el cuadro emergente nativo */
+.tools-icons i[title]:hover {
+  /* Cambia pointer-events a none cuando se pasa el cursor sobre el icono */
+  pointer-events: none;
+}
+

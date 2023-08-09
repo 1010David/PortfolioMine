@@ -1,0 +1,16 @@
+// Cambiar entre modo día y modo noche
+const toggleMode = document.querySelector("#toggle-mode");
+toggleMode.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// Scroll suave al hacer clic en los enlaces de la barra de navegación
+document.querySelectorAll("nav a").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
